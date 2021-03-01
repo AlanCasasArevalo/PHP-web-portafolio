@@ -10,3 +10,5 @@ use App\Http\Controllers\PortfolioController;
 
 // Esto permite listar todas las rutas del controlador
 Route::resource('projects', PortfolioController::class);
+Route::resource('projects', PortfolioController::class)->except(['index', 'show']);
+Route::resource('projects', PortfolioController::class)->only(['index', 'show']);
