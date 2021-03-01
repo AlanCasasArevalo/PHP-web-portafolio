@@ -9,4 +9,4 @@ use App\Http\Controllers\PortfolioController;
 //Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 
 // Esto permite listar todas las rutas del controlador
-Route::apiResource('projects', PortfolioController::class);
+Route::resource('projectos', PortfolioController::class);
