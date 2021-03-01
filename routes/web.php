@@ -19,14 +19,14 @@ Route::get('/saludo/{name?}', function ($name = "Invitado") {
 });
 
 Route::get('/', function () {
-    echo "<a href='/contactos'>Contactos 1</a><br>";
-    echo "<a href='/contactos'>Contactos 2</a><br>";
-    echo "<a href='/contactos'>Contactos 3</a><br>";
-    echo "<a href='/contactos'>Contactos 4</a><br>";
-    echo "<a href='/contactos'>Contactos 5</a><br>";
-    echo "<a href='/contactos'>Contactos 6</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 1</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 2</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 3</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 4</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 5</a><br>";
+    echo "<a href='" . route('contactos'). "'>Contactos 6</a><br>";
 });
 
 Route::get('/contactos', function () {
     return "Seccion de contactos  ";
-});
+})->name('contactos');
