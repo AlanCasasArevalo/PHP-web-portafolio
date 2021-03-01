@@ -13,24 +13,6 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolio = [
-            ['title' => 'Projecto #1'],
-            ['title' => 'Projecto #2'],
-            ['title' => 'Projecto #3'],
-            ['title' => 'Projecto #4'],
-        ];
-
-        return view('portfolio', compact('portfolio'));
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
         //
     }
 
@@ -52,17 +34,6 @@ class PortfolioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
