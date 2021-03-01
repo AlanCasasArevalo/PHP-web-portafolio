@@ -26,15 +26,21 @@
             @endif
         @endisset
    --}}
-        @isset($portfolio)
-            @if($portfolio)
-                @foreach($portfolio as $item)
-                    <li>{{$item['title']}}</li>
-                @endforeach
-            @else
-                <li>No hay projectos a mostrar</li>
-            @endif
-        @endisset
+{{--        @isset($portfolio)--}}
+{{--            @if($portfolio)--}}
+{{--                @foreach($portfolio as $item)--}}
+{{--                    <li>{{$item['title']}}</li>--}}
+{{--                @endforeach--}}
+{{--            @else--}}
+{{--                <li>No hay projectos a mostrar</li>--}}
+{{--            @endif--}}
+{{--        @endisset--}}
+
+        @forelse($portfolio as $item)
+            <li>{{$item['title']}}</li>
+        @empty
+            <li>No hay projectos a mostrar</li>
+        @endforelse
 
     </ul>
 @endsection

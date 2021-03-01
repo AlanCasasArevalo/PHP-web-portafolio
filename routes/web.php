@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 $portfolio = [
-//  ['title' => 'Projecto #1'],
-//  ['title' => 'Projecto #2'],
-//  ['title' => 'Projecto #3'],
-//  ['title' => 'Projecto #4'],
+  ['title' => 'Projecto #1'],
+  ['title' => 'Projecto #2'],
+  ['title' => 'Projecto #3'],
+  ['title' => 'Projecto #4'],
 ];
 
 Route::view('/', 'home')->name('home');
