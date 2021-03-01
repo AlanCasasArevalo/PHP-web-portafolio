@@ -27,6 +27,6 @@ Route::get('/', function () {
     echo "<a href='" . route('contactos'). "'>Contactos 6</a><br>";
 });
 
-Route::get('/contactos', function () {
+Route::get('/contactame', function () {
     return "Seccion de contactos  ";
 })->name('contactos');
