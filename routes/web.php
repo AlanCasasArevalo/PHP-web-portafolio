@@ -4,7 +4,7 @@ use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 
-App::setLocale('es');
+App::setLocale('en');
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
