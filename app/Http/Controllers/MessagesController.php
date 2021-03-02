@@ -13,6 +13,8 @@ class MessagesController extends Controller
             'email' => ['required', 'email'],
             'subject' => ['required', 'min:8'],
             'content' => ['required', 'min:10'],
+        ], [
+            'name.required' => 'Necesitamos tu nombre'
         ]);
 
         return 'Datos validos';
