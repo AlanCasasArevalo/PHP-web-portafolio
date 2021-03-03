@@ -33,6 +33,8 @@ return [
     |
     */
 
+//    'driver' => env('MAIL_DRIVER', 'sendgrid'),
+
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
@@ -44,6 +46,10 @@ return [
             'timeout' => null,
             'auth_mode' => null,
         ],
+//
+//        'sendgrid' => [
+//            'transport' => 'sendgrid',
+//        ],
 
         'ses' => [
             'transport' => 'ses',
@@ -84,8 +90,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'alancasasarevalo@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Alan Casas'),
     ],
 
     /*
