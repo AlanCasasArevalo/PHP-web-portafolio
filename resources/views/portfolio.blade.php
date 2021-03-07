@@ -18,6 +18,7 @@
         @empty
             <li>No hay projectos a mostrar</li>
         @endforelse
-
+        {{--   Para realizar paginacion desde la parte web     --}}
+        {{$portfolio->links()}}
     </ul>
 @endsection
