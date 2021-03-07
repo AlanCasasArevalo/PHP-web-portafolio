@@ -13,12 +13,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        // Estos modelos los coje de la base de datos creada
-        // $portfolio = Project::orderBy('created_at', 'DESC')->get();
-        // Ordenar de manera descendente por fecha
-//        $portfolio = Project::orderBy('created_at', 'DESC')->get();
-        // Ordenar de manera descendente por fecha
-        $portfolio = Project::latest()->get();
+        // Paginar elementos, son los elementos a mostrar en la pagina
+        $portfolio = Project::latest()->paginate(2);
 
         return view('portfolio', compact('portfolio'));
     }
