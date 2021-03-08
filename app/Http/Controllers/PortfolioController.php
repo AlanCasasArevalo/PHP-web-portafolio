@@ -23,7 +23,7 @@ class PortfolioController extends Controller
 
     public function show($id)
     {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         return view('projects.show', [
            'project' => $project
         ]);
