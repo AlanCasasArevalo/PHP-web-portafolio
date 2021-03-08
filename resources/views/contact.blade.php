@@ -2,7 +2,7 @@
 @section('title', 'CONTACT')
 @section('content')
     <h1> {{__('Contact')}} </h1>
-    <form method="POST" action="{{route('contact')}}">
+    <form method="POST" action="{{route('message.store')}}">
         @csrf
 {{--        <input type="text" placeholder="Nombre..." name="name" value="{{old('name')}}"><br>--}}
         <input type="text" placeholder="Nombre..." name="name" value="Alan"><br>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 
-class PortfolioController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PortfolioController extends Controller
         // Paginar elementos, son los elementos a mostrar en la pagina
 //        $projects = Project::latest()->paginate();
 
-        return view('portfolio', [
+        return view('projects.index', [
             'projects' => Project::latest()->paginate()
         ]);
     }

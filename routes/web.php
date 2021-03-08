@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProjectController;
 
 App::setLocale('en');
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
-Route::post('contact', [MessagesController::class, 'store']);
+Route::post('contact', [MessageController::class, 'store'])->name('message.store');
 
-Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::get('/portfolio/{id}', [PortfolioController::class, 'show'])->name('portfolio.show');
+Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
