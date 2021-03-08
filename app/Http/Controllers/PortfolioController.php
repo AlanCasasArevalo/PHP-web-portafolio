@@ -20,4 +20,9 @@ class PortfolioController extends Controller
             'projects' => Project::latest()->paginate()
         ]);
     }
+
+    public function show($id)
+    {
+        return $id;
+    }
 }
