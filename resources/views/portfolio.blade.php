@@ -3,7 +3,7 @@
 @section('content')
     <h1>PORTFOLIO</h1>
     <ul>
-        @forelse($portfolio as $item)
+        @forelse($projects as $item)
             {{--  Formato de fecha usado por carbon
             Solo año
             <li>{{$item->title}} <br> <small>{{$item->description}}</small> <br> {{$item->created_at-> format('Y')}} </li>
@@ -19,6 +19,6 @@
             <li>No hay projectos a mostrar</li>
         @endforelse
         {{--   Para realizar paginacion desde la parte web     --}}
-        {{$portfolio->links()}}
+        {{$projects->links()}}
     </ul>
 @endsection

@@ -9,13 +9,15 @@ class PortfolioController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         // Paginar elementos, son los elementos a mostrar en la pagina
-        $portfolio = Project::latest()->paginate(2);
+//        $projects = Project::latest()->paginate();
 
-        return view('portfolio', compact('portfolio'));
+        return view('portfolio', [
+            'projects' => Project::latest()->paginate()
+        ]);
     }
 }
