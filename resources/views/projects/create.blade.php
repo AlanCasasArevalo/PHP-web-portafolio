@@ -2,6 +2,14 @@
 @section('title', 'Crear')
 @section('content')
     <h1>Crear un nuevo proyecto</h1>
+    @if($errors->any())
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
     <form method="POST" action="{{route('projects.store')}}">
 {{-- Esta directicva es necesaria para poder decirle a Laravel que la fuente es confiable  --}}
         @csrf
