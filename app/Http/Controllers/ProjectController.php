@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateProjectRequest;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -33,17 +34,10 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store()
+    public function store(CreateProjectRequest $request)
     {
 
-        // Con esta asignacion lo que hacemos es validar los campos del formulario y pasarlos al crear un nuevo proyecto
-        $fields = request()->validate([
-            'title' => 'required',
-            'url' => 'required',
-            'description' => 'required',
-        ]);
-
-        Project::create($fields);
+        Project::create($request->validated());
 
         return  redirect()->route('projects.index');
     }
