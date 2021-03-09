@@ -21,11 +21,29 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
         return view('projects.show', [
            'project' => $project
         ]);
+    }
+
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+    public function store()
+    {
+        $title = request('title');
+        $url = request('url');
+        $description = request('description');
+        Project::create([
+            'title' => $title,
+            'url' => $url,
+            'description' => $description
+        ]);
+
+        return  redirect()->route('projects.index');
     }
 }
