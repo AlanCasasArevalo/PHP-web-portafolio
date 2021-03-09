@@ -14,4 +14,6 @@ Route::post('contact', [MessageController::class, 'store'])->name('message.store
 Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
 Route::post('/portfolio', [ProjectController::class, 'store'])->name('projects.store');
 Route::get('/portfolio/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/portfolio/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::patch('/portfolio/{project}', [ProjectController::class, 'update'])->name('projects.update');
 Route::get('/portfolio/{project}', [ProjectController::class, 'show'])->name('projects.show');
