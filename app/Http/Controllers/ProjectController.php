@@ -35,14 +35,15 @@ class ProjectController extends Controller
 
     public function store()
     {
-        $title = request('title');
-        $url = request('url');
-        $description = request('description');
-        Project::create([
-            'title' => $title,
-            'url' => $url,
-            'description' => $description
+
+        // Con esta asignacion lo que hacemos es validar los campos del formulario y pasarlos al crear un nuevo proyecto
+        $fields = request()->validate([
+            'title' => 'required',
+            'url' => 'required',
+            'description' => 'required',
         ]);
+
+        Project::create($fields);
 
         return  redirect()->route('projects.index');
     }

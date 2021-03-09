@@ -13,12 +13,14 @@ class Project extends Model
         return 'url';
     }
 
+    // El modificador $fillable hace que solo se actualicen aquellas variables que tengan el nombre dentro del array
+//    protected $fillable = [
+//        'title',
+//        'url',
+//        'description',
+//    ];
 
-    // lo que se realiza al crear un modelo es que dicho modelo referencia a una tabla en prural y minucusla por tanto hemos crado el modelo Project que referenciara a la tabla projects
-    // en caso de que no funcione dichas referencias automagicas se usa este comando protected $table = 'tabla_que_referenciar';
-    protected $fillable = [
-        'title',
-        'url',
-        'description',
-    ];
+    //Este metodo permite eliminar las validaciones y permite actualizar los elementos, es una mala practica debido a que se
+    // si haces un Project::create(request()->all()); haces que los campos sean actualizados pudiendo inyectar scripts por ejemplo
+    protected $guarded = [];
 }
