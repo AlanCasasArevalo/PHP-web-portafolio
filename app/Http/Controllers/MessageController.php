@@ -24,6 +24,6 @@ class MessageController extends Controller
         /*
          * Metodo back es para volver, es similar a redirect
          */
-        return back();
+        return back()->with('status', 'Recibimos tu mensaje, te responderemos en menos de 24 horas, por favor ten paciencia');
     }
 }
