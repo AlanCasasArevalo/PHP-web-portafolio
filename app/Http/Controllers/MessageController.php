@@ -21,6 +21,9 @@ class MessageController extends Controller
         //Queue son hilos para que el usuario no espere
         Mail::to('alancasasarevalo@gmail.com')->queue(new MessageReceived($msg));
 
-        return 'Mensaje enviado';
+        /*
+         * Metodo back es para volver, es similar a redirect
+         */
+        return back();
     }
 }
