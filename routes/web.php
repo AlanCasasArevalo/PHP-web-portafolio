@@ -17,4 +17,5 @@ Route::post('contact', [MessageController::class, 'store'])->name('message.store
  */
 Route::resource('portfolio', ProjectController::class)->names('projects')->parameter('portfolio', 'project');
 
-Auth::routes();
+// Esto sirve para poder eliminar la ruta de registro del home
+Auth::routes(['register' => false]);
