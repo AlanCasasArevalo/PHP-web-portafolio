@@ -2,7 +2,9 @@
 @section('title', 'PORTFOLIO')
 @section('content')
     <h1>PORTFOLIO</h1>
-    <a href="{{ route('projects.create') }}"> Crear nuevo proyecto </a>
+    @auth
+        <a href="{{ route('projects.create') }}"> Crear nuevo proyecto </a>
+    @endauth
     <ul>
         @forelse($projects as $item)
             <li>

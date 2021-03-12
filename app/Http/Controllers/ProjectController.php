@@ -7,11 +7,12 @@ use App\Models\Project;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show', 'index']);
+    }
+
     public function index()
     {
         // Paginar elementos, son los elementos a mostrar en la pagina
