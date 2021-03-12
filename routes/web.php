@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MessageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 
@@ -15,3 +16,5 @@ Route::post('contact', [MessageController::class, 'store'])->name('message.store
  * Esto permite listar todas las rutas del controlador
  */
 Route::resource('portfolio', ProjectController::class)->names('projects')->parameter('portfolio', 'project');
+
+Auth::routes();
