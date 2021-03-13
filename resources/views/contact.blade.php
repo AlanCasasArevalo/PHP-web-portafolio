@@ -1,27 +1,90 @@
 @extends('layout')
 @section('title', 'CONTACT')
 @section('content')
-    <h1> {{__('Contact')}} </h1>
-    <form method="POST" action="{{route('message.store')}}">
-        @csrf
-        {{--        <input type="text" placeholder="Nombre..." name="name" value="{{old('name')}}"><br>--}}
-        <input type="text" placeholder="Nombre..." name="name" value="Alan"><br>
-        {!! $errors->first('name', '<small>:message</small><br>') !!}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-10 col-lg-6 mx-auto">
 
-        {{--        <input type="email" placeholder="email@email.com" name="email" value="{{old('email')}}"><br>--}}
-        <input type="email" placeholder="email@email.com" name="email" value="alancasasarevalo@gmail.com"><br>
-        {!! $errors->first('email', '<small>:message</small><br>') !!}
+                <form class="bg-white shadow rounded py-3 px4" method="POST" action="{{route('message.store')}}">
+                    @csrf
+                    <h1 class="display-4"> {{__('Contact')}} </h1>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input
+                            class="form-control bg-light shadow-sm @error('name') is-invalid @else border-0 @enderror"
+                            id="name"
+                            type="text"
+                            placeholder="Nombre..."
+                            name="name"
+                            value="{{ old('name') }}">
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                    <strong>
+                    {{$message}}
+                    </strong>
+                </span>
+                        @enderror
+                    </div>
 
-        {{--        <input type="text" placeholder="Asunto..." name="subject" value="{{old('subject')}}"><br>--}}
-        <input type="text" placeholder="Asunto..." name="subject" value="Presupuesto"><br>
-        {!! $errors->first('subject', '<small>:message</small><br>') !!}
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            class="form-control bg-light shadow-sm @error('email') is-invalid @else border-0 @enderror"
+                            id="email"
+                            type="email"
+                            placeholder="email@email.com."
+                            name="email"
+                            value="{{ old('email') }}">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                    <strong>
+                    {{$message}}
+                    </strong>
+                </span>
+                        @enderror
+                    </div>
 
-        {{--        <textarea name="content" placeholder="Pon aqui tu mensaje......" id="" cols="30" rows="10" value="{{old('content')}}">Necestio un presupuesto para poder tener lo que sea </textarea><br>--}}
-        <textarea name="content" placeholder="Pon aqui tu mensaje......" id="" cols="30" rows="10"
-                  value="{{old('content')}}">Necestio un presupuesto para poder tener lo que sea </textarea><br>
-        {!! $errors->first('content', '<small>:message</small><br>') !!}
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <input
+                            class="form-control bg-light shadow-sm @error('subject') is-invalid @else border-0 @enderror"
+                            id="subject"
+                            type="text"
+                            placeholder="Asunto..."
+                            name="subject"
+                            value="{{ old('subject') }}">
+                        @error('subject')
+                        <span class="invalid-feedback" role="alert">
+                    <strong>
+                    {{$message}}
+                    </strong>
+                </span>
+                        @enderror
+                    </div>
 
-        <button>@lang('Send')</button>
-    </form>
+                    <div class="form-group">
+                        <label for="content"></label>
+                        <textarea
+                            class="form-control bg-light shadow-sm @error('content') is-invalid @else border-0 @enderror"
+                            name="content"
+                            placeholder="Pon aqui tu mensaje......"
+                            id="content"
+                            cols="30"
+                            rows="10"
+                            value="{{old('content')}}"></textarea>
+                        @error('subject')
+                        <span class="invalid-feedback" role="alert">
+                    <strong>
+                    {{$message}}
+                    </strong>
+                </span>
+                        @enderror
+                    </div>
+
+                    <button class="btn btn-primary btn-lg btn-block">@lang('Send')</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 @endsection
