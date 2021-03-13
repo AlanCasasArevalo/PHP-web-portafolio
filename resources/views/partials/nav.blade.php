@@ -26,7 +26,7 @@
                 @else
                     <li class="nav-item"><a class="nav-link" href="#"
                                             onclick="event.preventDefault();
-                   document.getElementById('logout-form').submit();">>
+                   document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a></li>
 

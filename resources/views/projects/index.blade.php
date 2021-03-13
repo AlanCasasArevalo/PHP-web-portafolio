@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'PORTFOLIO')
+@section('title', 'Project')
 @section('content')
     <h1>PORTFOLIO</h1>
     @auth
