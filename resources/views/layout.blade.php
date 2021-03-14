@@ -15,7 +15,7 @@
         @include('partials.nav')
         @include('partials.session-status')
     </header>
-    <main>
+    <main class="py-3">
         @yield('content')
     </main>
     <footer class="bg-white text-black-50 text-center py-3">

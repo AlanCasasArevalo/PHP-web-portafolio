@@ -15,9 +15,6 @@ class ProjectController extends Controller
 
     public function index()
     {
-        // Paginar elementos, son los elementos a mostrar en la pagina
-//        $projects = Project::latest()->paginate();
-
         return view('projects.index', [
             'projects' => Project::latest()->paginate()
         ]);
