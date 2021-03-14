@@ -8,7 +8,7 @@
                     @csrf
                     <h1 class="display-4"> {{__('Contact')}} </h1>
                     <hr>
-                    <div class="form-group">
+                    <div class="form-group px-2">
                         <label for="name">Nombre</label>
                         <input
                             class="form-control bg-light shadow-sm @error('name') is-invalid @else border-0 @enderror"
@@ -26,7 +26,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group px-2">
                         <label for="email">Email</label>
                         <input
                             class="form-control bg-light shadow-sm @error('email') is-invalid @else border-0 @enderror"
@@ -44,7 +44,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group px-2">
                         <label for="subject">Asunto</label>
                         <input
                             class="form-control bg-light shadow-sm @error('subject') is-invalid @else border-0 @enderror"
@@ -62,7 +62,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group px-2">
                         <label for="content"></label>
                         <textarea
                             class="form-control bg-light shadow-sm @error('content') is-invalid @else border-0 @enderror"
